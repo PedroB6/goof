@@ -7,10 +7,12 @@ function command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-# Check if gcloud is installed
-if ! command_exists "gcloud"; then
-  echo "Error: gcloud is not installed. Please install gcloud and try again."
-  exit 1
+# Check if envsubst is installed
+if ! command_exists "envsubst"; then
+  echo "Installing envsubst..."
+  sudo apt-get update
+  sudo apt-get install gettext
+  echo "envsubst installed."
 fi
 
 # Check if a region argument is provided
