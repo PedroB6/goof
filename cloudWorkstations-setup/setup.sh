@@ -11,7 +11,7 @@ function command_exists() {
 if ! command_exists "envsubst"; then
   echo "Installing envsubst..."
   sudo apt-get update
-  sudo apt-get install gettext
+  sudo apt-get install -y gettext
   echo "envsubst installed."
 fi
 
